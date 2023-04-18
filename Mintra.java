@@ -11,10 +11,16 @@ public class Mintra {
     Could you change the code, so it will be easier to write unit tests for it?
    */
 	public static void main(String[] args) {
+    String expected = "Sam,Don,Morag";
     List<Person> people = List.of(new Person(17, "John"),
     new Person(18, "Sam"), new Person(45, "Don"), new Person(50, "Morag"),
     new Person(51, "Dawn"));
     List<String> results = Mintra.filter(people, 18, 50);
+    if(expected.equals(String.join(",", results))) {
+      System.out.println("Pass");
+    } else {
+      System.out.println("Fail");
+    }
 
     results.forEach(rs -> System.out.println(rs));
   }
